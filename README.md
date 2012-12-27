@@ -13,7 +13,7 @@ Example siriproxy config.yml entry:
     plugins:
     
         - name: 'Raspio'
-          path: './plugins/siriproxy-raspio'
+          git: 'git://github.com/nickrw/siriproxy-raspio.git'
           pins:
             - pin: 14
               name: 'disco ball'
