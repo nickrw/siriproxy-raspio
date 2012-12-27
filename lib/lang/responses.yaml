@@ -1,0 +1,23 @@
+:confirmon:
+- "I have switched device '%s' on"
+- "%s now on"
+- "That's the %s now on"
+
+:confirmoff:
+- "I have switched device '%s' off for you"
+- "%s is now off"
+- "I've turned off the %s"
+
+:alreadyon:
+- "The device '%s' is already switched on."
+- "%s is already enabled."
+- "I cannot do that, the %s is already operating."
+- "Try switching the %s off and back on again."
+
+:alreadyoff:
+- "I'm afraid I can't do that. The %s isn't switched on"
+- "I'm sorry, but %s isn't on yet."
+- "The device '%s' is already switched off."
+
+:unknownthing:
+- "I'm sorry, I don't know of a device I control called '%s'."

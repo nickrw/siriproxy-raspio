@@ -10,8 +10,8 @@ Gem::Specification.new do |s|
   s.summary     = %q{Raspberry Pi GPIO single-pin toggler}
   s.description = %q{Raspberry Pi GPIO single-pin toggler} 
 
-  s.files       = Dir.glob("{lib}/*")
+  s.files       = Dir.glob("{lib}/**/*")
   s.require_paths = ["lib"]
 
-  s.add_runtime_dependency "gpio"
+  s.add_runtime_dependency "wiringpi"
 end
