@@ -12,22 +12,22 @@ Example 1
 
         - name: 'Raspio'
           git: 'git://github.com/nickrw/siriproxy-raspio.git'
-	  wiringpi_mode: WPI_MODE_SYS
+          wiringpi_mode: WPI_MODE_SYS
           pins:
             - pin: 23
               name: 'disco ball'
               export: yes
-	      active_low: yes
+              active_low: yes
     
             - pin: 24
               name: 'motor'
-	      export: no
+              export: no
 
 Example 2
 
         - name: 'Raspio'
           git: 'git://github.com/nickrw/siriproxy-raspio.git'
-	  wiringpi_mode: WPI_MODE_PINS
+          wiringpi_mode: WPI_MODE_PINS
           pins:
             - pin: 4
               name: 'disco ball'
