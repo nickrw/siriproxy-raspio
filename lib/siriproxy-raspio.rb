@@ -26,7 +26,7 @@ class SiriProxy::Plugin::Raspio < SiriProxy::Plugin
 
     config['pins'].each do |pin|
       # Map pin 'names' to GPIO pin numbers. The pin number depends on the @wpi_mode
-      # specified by the configuration. WiringPi has its own mapping if the default
+      # specified by the configuration. WiringPi has its own mapping of the default
       # mode of WPI_MODE_PINS is used. See https://projects.drogon.net/raspberry-pi/wiringpi/pins/
       # for pin mapping.
       @pins[pin['name'].downcase] = pin['pin']
