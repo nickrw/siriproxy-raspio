@@ -9,6 +9,7 @@ config.yml
 Example siriproxy config.yml entry:
 
 Example 1
+
         - name: 'Raspio'
           git: 'git://github.com/nickrw/siriproxy-raspio.git'
 	  wiringpi_mode: WPI_MODE_SYS
@@ -23,6 +24,7 @@ Example 1
 	      export: no
 
 Example 2
+
         - name: 'Raspio'
           git: 'git://github.com/nickrw/siriproxy-raspio.git'
 	  wiringpi_mode: WPI_MODE_PINS
