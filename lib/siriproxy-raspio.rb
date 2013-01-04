@@ -50,7 +50,7 @@ class SiriProxy::Plugin::Raspio < SiriProxy::Plugin
 
 	# Set the pin as an output, not an input.
         if File.exists? "/sys/class/gpio/gpio#{pin['pin']}/direction"
-          if IO.read("/sys/class/gpio/gpio#{pin['pin']}/direction" != 'out'
+          if IO.read("/sys/class/gpio/gpio#{pin['pin']}/direction") != 'out'
             IO.write("/sys/class/gpio/gpio#{pin['pin']}/direction", 'out')
           end
 	end
