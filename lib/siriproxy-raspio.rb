@@ -33,7 +33,7 @@ class SiriProxy::Plugin::Raspio < SiriProxy::Plugin
 
       if @wpi_mode == WPI_MODE_SYS
 
-        # Attempt to export the /sys/class/gpio pin manually
+        # Attempt to export the /sys/class/gpio pin manually and set the direction
         # if export: yes is set in the pin's configuration
         if pin['export']
           if ! File.exists? "/sys/class/gpio/gpio#{pin['pin']}"
@@ -47,6 +47,11 @@ class SiriProxy::Plugin::Raspio < SiriProxy::Plugin
         if File.exists? "/sys/class/gpio/gpio#{pin['pin']}/active_low"
           IO.write("/sys/class/gpio/gpio#{pin['pin']}/active_low", pin['active_low'] ? '1' : '0' )
         end
+
+	# Set the pin as an output, not an input.
+        if File.exists? "/sys/class/gpio/gpio#{pin['pin']}/direction"
+	  IO.write("/sys/class/gpio/gpio#{pin['pin']}/direction", 'out')
+	end
 
       end
 
