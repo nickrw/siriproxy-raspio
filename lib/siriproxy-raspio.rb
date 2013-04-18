@@ -42,8 +42,8 @@ class SiriProxy::Plugin::Raspio < SiriProxy::Plugin
         end
 
         # Set the GPIO pin to active_low if set in the pin's configuration.
-	# This means voltage output will be high when the pin's value is 0
-	# and low when the pin's value is 1.
+        # This means voltage output will be high when the pin's value is 0
+        # and low when the pin's value is 1.
         if File.exists? "/sys/class/gpio/gpio#{pin['pin']}/active_low"
           IO.write("/sys/class/gpio/gpio#{pin['pin']}/active_low", pin['active_low'] ? '1' : '0' )
         end
@@ -53,7 +53,7 @@ class SiriProxy::Plugin::Raspio < SiriProxy::Plugin
           if IO.read("/sys/class/gpio/gpio#{pin['pin']}/direction").strip != 'out'
             IO.write("/sys/class/gpio/gpio#{pin['pin']}/direction", 'out')
           end
-	end
+        end
 
       end
 
@@ -76,7 +76,7 @@ class SiriProxy::Plugin::Raspio < SiriProxy::Plugin
         @io.write(@pins[name], value ? 1 : 0)
         respond(value ? :confirmon : :confirmoff, name)
       else
-	respond(value ? :alreadyon : :alreadyoff, name)
+        respond(value ? :alreadyon : :alreadyoff, name)
       end
     else
       respond(:unknownthing, name)
@@ -102,7 +102,7 @@ class SiriProxy::Plugin::Raspio < SiriProxy::Plugin
         end
       rescue ArgumentError
         # If you don't give it anything to sprintf above and you have %s in the yaml language strings, it'll raise an ArgumentError
-	# When writing the language file you should only use one %s per line. Using more than one will trigger this error.
+        # When writing the language file you should only use one %s per line. Using more than one will trigger this error.
         "Something went wrong inside Siri's brain! I don't know how to reply for '#{response_type.to_s}' because I've not been given sufficient word substitions."
       end
     else
