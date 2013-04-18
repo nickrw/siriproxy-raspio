@@ -73,7 +73,7 @@ class SiriProxy::Plugin::Raspio < SiriProxy::Plugin
       pinval = @io.read(@pins[name])
       pinval = pinval == 1 ? true : false
       if pinval != value
-        value ? @io.write(@pins[name], 1) : @io.write(@pins[name], 0)
+        @io.write(@pins[name], value ? 1 : 0)
         respond(value ? :confirmon : :confirmoff, name)
       else
 	respond(value ? :alreadyon : :alreadyoff, name)
